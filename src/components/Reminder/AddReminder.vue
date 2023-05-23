@@ -1,8 +1,8 @@
 <template>
-    <form>
+    <form @submit.prevent="saveReminder">
         <div class="form-control">
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" />
+            <input id="name" name="name" type="text" ref="name"/>
         </div>
         <div class="form-control">
             <label for="date">Date</label>
@@ -39,6 +39,22 @@
 
 <script>
     export default {
-        
+        data() {
+            return {
+                reminder: {
+                    name: '',
+                }
+            }
+        },
+        methods: {
+            saveReminder() {
+                const enteredName = this.$refs.name.value;
+                this.reminder = {
+                    name: enteredName
+                }
+
+                console.log(this.reminder);
+            }
+        }
     }
 </script>
