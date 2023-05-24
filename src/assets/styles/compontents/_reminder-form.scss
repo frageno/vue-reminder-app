@@ -1,0 +1,11 @@
+.reminder-form {
+    width:100%;
+    @include padding(3rem, 0);
+
+    @include lg {
+        width:635px;
+    }
+    @include xl {
+        width:635px;
+    }
+}

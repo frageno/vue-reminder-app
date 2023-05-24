@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="saveReminder">
+  <form @submit.prevent="saveReminder" class="reminder-form">
     <div class="form-control">
       <label for="name">Name</label>
       <input id="name" name="name" type="text" />
@@ -23,11 +23,11 @@
     <div class="form-control">
       <label for="">Tags</label>
       <input type="radio" id="high-prio" name="tags" value="Very High Prio" />
-      <label for="high-prio">Very High Prio</label><br />
+      <span class="radio-label">Very High Prio</span><br />
       <input type="radio" id="important" name="tags" value="Important" />
-      <label for="important">Important</label><br />
+      <span class="radio-label">Important</span><br />
       <input type="radio" id="low-prio" name="tags" value="Low Prio" />
-      <label for="low-prio">Low Prio</label>
+      <span class="radio-label">Low Prio</span>
     </div>
     <div class="form-control">
       <label for="description">Description</label>

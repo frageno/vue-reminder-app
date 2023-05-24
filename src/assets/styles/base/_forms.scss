@@ -1,0 +1,82 @@
+/* forms */
+
+/* Form elements */
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+  }
+}
+
+/* Form labels */
+label {
+  display: inline-block;
+  min-width: 120px;
+}
+
+/* Form submit button */
+button[type="submit"],
+input[type="submit"] {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: $black;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary;
+  }
+}
+
+/* Radio buttons */
+input[type="radio"] {
+  display: inline-block;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  width: 15px;
+  border-radius: 50%;
+}
+
+.radio-label {
+    margin-right: 0.5rem;
+}
+
+/* Custom arrow for select */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='17' height='9' viewBox='0 0 17 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.9194 0.459717L8.45971 7.91945L0.999977 0.459717' stroke='%230047FF'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+/* Form control */
+.form-control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+/* Error messages */
+.error-message {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}

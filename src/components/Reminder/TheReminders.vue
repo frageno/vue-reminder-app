@@ -1,7 +1,23 @@
 <template>
-  <AddReminder />
-  <div v-for="reminder in reminders" :key="reminder._id">
-    {{ reminder.name }}
+  <div class="container">
+    <AddReminder />
+    <div class="flex col-4">
+      <div v-for="reminder in reminders" :key="reminder._id">
+        <BaseCard> 
+          <template #header>
+            {{ reminder.name }}
+          </template>
+          <template #body>
+            {{ reminder.date }}
+            {{ reminder.tags }}
+            {{ reminder.description }}
+          </template>
+          <template #footer>
+            Edit
+          </template>
+        </BaseCard>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -13,6 +29,8 @@ export default {
             reminders: data,
         }
     },
-    components: [AddReminder],
+    components: {
+      AddReminder,
+    },
 }
 </script>

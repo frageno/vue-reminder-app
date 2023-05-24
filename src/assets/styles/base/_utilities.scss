@@ -1,0 +1,56 @@
+/* utilities */
+
+/* spacing utilities */
+@mixin margin($margin-y, $margin-x) {
+    margin: $margin-y $margin-x;
+}
+
+@mixin padding($padding-y, $padding-x) {
+    padding: $padding-y $padding-x;
+}
+
+/* typography utilities */
+@mixin text-center {
+    text-align: center;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+}
+
+/* flexbox utilities */
+@mixin flex-container($justify: flex-start, $align: flex-start) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin column($columns, $gap: 20px) {
+    flex-wrap: wrap;
+
+    > * {
+        flex: 1 0 calc(100% / #{$columns} - #{$gap});
+        margin: $gap / 2;
+    }
+}
+
+/* hidding utilities */
+@mixin hide {
+    display:none;
+}
+
+/* responsive utilities */
+@mixin hide-on-mobile {
+    @include sm {
+        @include hide;
+    }
+}
+
+@mixin hide-on-desktop {
+    @include lg {
+        @include hide;
+    }
+    @include xl {
+        @include hide;
+    }
+}

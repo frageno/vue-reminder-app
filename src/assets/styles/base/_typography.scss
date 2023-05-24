@@ -1,0 +1,40 @@
+/* typography */
+
+/* import font */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+/* Custom Typography */
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Heading styles */
+h1 {
+  @include heading(1);
+}
+h2 {
+  @include heading(2);
+}
+
+h3 {
+  @include heading(3);
+}
+
+/* Paragraph styles */
+p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Link styles */
+a {
+  color: $primary;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $black;
+  }
+}

@@ -1,0 +1,40 @@
+/* layout */
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include xl {
+        padding:0;
+    }
+    
+    @include lg {
+        padding: 0;
+    }
+}
+.flex {
+    @include flex-container;
+}
+
+.flex-center {
+    @include flex-container(center,center);
+}
+
+.row {
+    @include flex-container;
+    flex-wrap: wrap;
+}
+
+.col-1 {
+    @include column(1);
+}
+.col-2 {
+    @include column(2);
+}
+.col-3 {
+    @include column(3);
+}
+.col-4 {
+    @include column(4);
+}

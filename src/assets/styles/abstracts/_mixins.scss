@@ -1,0 +1,46 @@
+/* mixins */
+
+@mixin heading($size) {
+  @if $size == 1 {
+    font-size: 2rem;
+    font-weight: 700;
+  } @else if $size == 2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+  } @else if $size == 3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  } @else if $size == 4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+}
+
+// Media query mixin for small screens (up to 767px)
+@mixin sm {
+  @media (min-width:320px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+// Media query mixin for medium screens (768px to 1023px)
+@mixin md {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+// Media query mixin for large screens (1024px to 1279px)
+@mixin lg {
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+// Media query mixin for extra large screens (1280px to 1439px)
+@mixin xl {
+  @media (min-width: 1280px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
