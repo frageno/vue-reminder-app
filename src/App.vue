@@ -1,14 +1,14 @@
 <template>
     <TheHeader />
     <div class="wrapper">
-      <AddReminder />
+      <TheReminders />
     </div>
 </template>
 
 <script>
 // import components
 import TheHeader from './components/Layout/TheHeader.vue'
-import AddReminder from './components/Reminder/AddReminder.vue'
+import TheReminders from './components/Reminder/TheReminders.vue'
 
 export default {
   name: 'App',
@@ -16,7 +16,7 @@ export default {
   // components
   components: {
     TheHeader,
-    AddReminder,
+    TheReminders,
   }
 }
 </script>
