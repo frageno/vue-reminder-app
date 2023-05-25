@@ -42,7 +42,7 @@ import AddReminder from './AddReminder.vue';
 export default {
     data() {
         return {
-            reminders: data,
+            reminders: [],
             sortBy: '',
         }
     },
@@ -76,9 +76,8 @@ export default {
       }
     },
     mounted() {
-      this.saveRemindersToLocalStorage();
-      const storedReminders = localStorage.getItem('reminders');
-      this.reminders = JSON.parse(storedReminders);
+      // load data from local storage
+      this.loadRemidersFromLocalStorage(); 
     },
     methods: {
       // get the only date from date
@@ -102,14 +101,22 @@ export default {
       // remove reminder from array
       removeReminder(reminderID) {
         this.reminders = this.reminders.filter(item => item._id !== reminderID);
+        this.saveRemindersToLocalStorage();
       },
 
+      // load data from local storage
+      loadRemidersFromLocalStorage(){
+        const storedReminders = localStorage.getItem('reminders');
+        if(storedReminders){
+          this.reminders = JSON.parse(storedReminders);
+        }else {
+          this.reminders = data; // set reminders when in localstorage isn't any data
+        }
+      },
+
+      // save to local storage
       saveRemindersToLocalStorage() {
         localStorage.setItem('reminders', JSON.stringify(this.reminders));
-      },
-
-      removeReminderFromLocalStorage(){
-
       },
     }
 }
