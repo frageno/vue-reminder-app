@@ -1,11 +1,8 @@
 .reminder-form {
-    width:100%;
+    width:635px;
     @include padding(3rem, 0);
 
-    @include lg {
-        width:635px;
-    }
-    @include xl {
-        width:635px;
+    @include sm {
+        width:100%;
     }
 }

@@ -1,19 +1,22 @@
 <template>
   <div class="container">
-    <AddReminder />
+    <AddReminder @add-reminder="addReminder"/>
+  </div>
+  <div class="container">
     <div class="flex col-4">
       <div v-for="reminder in reminders" :key="reminder._id">
         <BaseCard> 
           <template #header>
-            {{ reminder.name }}
+            <h3 class="pb-3">{{ reminder.name }}</h3>
           </template>
           <template #body>
-            {{ reminder.date }}
-            {{ reminder.tags }}
-            {{ reminder.description }}
+            <span>Date: {{ formatDate(reminder.date) }}</span>
+            <span class="pt-3">Time: {{ formatTime(reminder.date) }}</span>
+            <span class="py-3">{{ reminder.tags }}</span>
+            <p class="truncate-text">{{ reminder.description }}</p>
           </template>
           <template #footer>
-            Edit
+            <a>Edit</a>
           </template>
         </BaseCard>
       </div>
@@ -32,5 +35,23 @@ export default {
     components: {
       AddReminder,
     },
+    methods: {
+      // get the only date from date
+      formatDate(date) {
+        const dateObj = new Date(date);
+        return dateObj.toLocaleDateString();
+      },
+
+      // get the only time from date
+      formatTime(date) {
+        const timeObj = new Date(date);
+        return timeObj.toLocaleTimeString();
+      },
+
+      // add new reminder to array
+      addReminder(reminder){
+        this.reminders.unshift(reminder);
+      }
+    }
 }
 </script>

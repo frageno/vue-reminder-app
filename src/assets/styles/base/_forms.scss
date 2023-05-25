@@ -72,6 +72,14 @@ select {
   display: flex;
   align-items: center;
   margin-bottom: 1.25rem;
+
+  &__checkboxes {
+    @include flex-container;
+
+    @include sm {
+      display: block;
+    }
+  }
 }
 
 /* Error messages */

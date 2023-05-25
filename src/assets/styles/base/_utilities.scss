@@ -10,8 +10,8 @@
 }
 
 /* typography utilities */
-@mixin text-center {
-    text-align: center;
+@mixin text-align($align) {
+    text-align: $align;
 }
 
 @mixin font-size($size) {
@@ -19,10 +19,11 @@
 }
 
 /* flexbox utilities */
-@mixin flex-container($justify: flex-start, $align: flex-start) {
+@mixin flex-container($justify: flex-start, $align: flex-start, $direction: row) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
+    flex-direction: $direction;
 }
 
 @mixin column($columns, $gap: 20px) {
@@ -31,6 +32,25 @@
     > * {
         flex: 1 0 calc(100% / #{$columns} - #{$gap});
         margin: $gap / 2;
+    }
+
+    @include sm {
+        > * {
+            flex: 1 0 calc(100% / 1 - #{$gap});
+            margin: $gap / 2;
+        }
+    }
+    @include md {
+        > * {
+            flex: 1 0 calc(100% / 2 - #{$gap});
+            margin: $gap / 2;
+        }
+    }
+    @include lg {
+        > * {
+            flex: 1 0 calc(100% / 3 - #{$gap});
+            margin: $gap / 2;
+        }
     }
 }
 
@@ -53,4 +73,61 @@
     @include xl {
         @include hide;
     }
+}
+
+/* helpers classes */
+
+@for $i from 0 through 10 {
+    .p-#{$i} {
+        padding: #{$i * 4}px !important;
+    }
+    .py-#{$i} {
+        padding: #{$i * 4}px 0 !important;
+    }
+    .px-#{$i} {
+        padding: 0 #{$i * 4}px !important;
+    }
+    .pt-#{$i} {
+        padding-top: #{$i * 4}px !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: #{$i * 4}px !important;
+    }
+}
+
+.mx-auto {
+    margin: 0 auto;
+}
+
+.block {
+    display: block;
+}
+
+.flex {
+    @include flex-container;
+}
+
+.flex-center {
+    @include flex-container(center,center);
+}
+
+.hide {
+    @include hide;
+}
+
+.text-center {
+    @include text-align(center);
+}
+.text-left {
+    @include text-align(left);
+}
+.text-right {
+    @include text-align(right);
+}
+
+.truncate-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }

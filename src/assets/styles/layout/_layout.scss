@@ -8,19 +8,7 @@
     @include xl {
         padding:0;
     }
-    
-    @include lg {
-        padding: 0;
-    }
 }
-.flex {
-    @include flex-container;
-}
-
-.flex-center {
-    @include flex-container(center,center);
-}
-
 .row {
     @include flex-container;
     flex-wrap: wrap;
