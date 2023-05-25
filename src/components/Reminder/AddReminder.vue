@@ -2,7 +2,7 @@
   <form @submit.prevent="saveReminder" class="reminder-form">
     <div class="form-control">
       <label for="name">Name</label>
-      <input id="name" name="name" type="text" v-model="newReminder.name"/>
+      <input id="name" name="name" type="text" placeholder="Enter name" v-model="newReminder.name"/>
     </div>
     <div class="form-control">
       <label for="date">Date</label>
@@ -15,6 +15,7 @@
     <div class="form-control">
       <label for="category">Category</label>
       <select name="category" id="category" v-model="newReminder.category">
+        <option value="" disabled selected>Select category</option>
         <option value="Category 1">Category 1</option>
         <option value="Category 2">Category 2</option>
         <option value="Category 3">Category 3</option>
@@ -33,7 +34,7 @@
     </div>
     <div class="form-control">
       <label for="description">Description</label>
-      <textarea id="description" name="description" type="text" rows="3" v-model="newReminder.description"/>
+      <textarea id="description" name="description" type="text" rows="3" placeholder="Enter description" v-model="newReminder.description"/>
     </div>
     <BaseButton> Save new reminder </BaseButton>
   </form>
