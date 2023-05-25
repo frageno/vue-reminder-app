@@ -7,6 +7,7 @@
       <div v-for="reminder in reminders" :key="reminder._id">
         <BaseCard> 
           <template #header>
+            <span class="card__close pb-3" @click="removeReminder(reminder._id)"></span>
             <h3 class="pb-3">{{ reminder.name }}</h3>
           </template>
           <template #body>
@@ -51,6 +52,11 @@ export default {
       // add new reminder to array
       addReminder(reminder){
         this.reminders.unshift(reminder);
+      },
+
+      // remove reminder from array
+      removeReminder(reminderID) {
+        this.reminders = this.reminders.filter(item => item._id !== reminderID);
       }
     }
 }

@@ -57,6 +57,7 @@ export default {
     // save values from form
     saveReminder() {
         this.newReminder = {
+          id: Math.random(),
           name: this.newReminder.name,
           date: this.newReminder.date,
           time: this.newReminder.time,

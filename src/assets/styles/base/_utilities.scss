@@ -30,25 +30,25 @@
     flex-wrap: wrap;
 
     > * {
-        flex: 1 0 calc(100% / #{$columns} - #{$gap});
+        flex: 0 0 calc(100% / #{$columns} - #{$gap});
         margin: $gap / 2;
     }
 
     @include sm {
         > * {
-            flex: 1 0 calc(100% / 1 - #{$gap});
+            flex: 0 0 calc(100% / 1 - #{$gap});
             margin: $gap / 2;
         }
     }
     @include md {
         > * {
-            flex: 1 0 calc(100% / 2 - #{$gap});
+            flex: 0 0 calc(100% / 2 - #{$gap});
             margin: $gap / 2;
         }
     }
     @include lg {
         > * {
-            flex: 1 0 calc(100% / 3 - #{$gap});
+            flex: 0 0 calc(100% / 3 - #{$gap});
             margin: $gap / 2;
         }
     }

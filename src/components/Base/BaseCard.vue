@@ -1,7 +1,6 @@
 <template>
   <div class="card">
     <div class="card__header">
-      <span class="card__close pb-3"></span>
       <slot name="header"></slot>
     </div>
     <div class="card__body">
