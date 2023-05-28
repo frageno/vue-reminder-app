@@ -55,8 +55,14 @@ export default {
     };
   },
   methods: {
+    chechInputValidation(){
+      if(this.newReminder.name.trim() === '') {
+          console.log('test')
+      }
+    },
     // save values from form
     saveReminder() {
+      this.chechInputValidation();
         this.newReminder = {
           id: Math.random(),
           name: this.newReminder.name,
