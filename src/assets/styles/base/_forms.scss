@@ -75,7 +75,7 @@ select {
   position: relative;
 
   &__checkboxes {
-    @include flex-container;
+    @include flex-container(flex-start,center,row);
 
     @include sm {
       display: block;
@@ -90,6 +90,10 @@ select {
       margin-top:0.25rem;
     }
   }
+}
+
+.category-button {
+  margin-left: 120px;
 }
 
 /* Error messages */

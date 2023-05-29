@@ -56,7 +56,7 @@
 
 /* hidding utilities */
 @mixin hide {
-    display:none;
+    display:none !important;
 }
 
 /* responsive utilities */
@@ -82,16 +82,37 @@
         padding: #{$i * 4}px !important;
     }
     .py-#{$i} {
-        padding: #{$i * 4}px 0 !important;
+        padding-top: #{$i * 4}px !important;
+        padding-bottom: #{$i * 4}px !important;
     }
     .px-#{$i} {
-        padding: 0 #{$i * 4}px !important;
+        padding-left: #{$i * 4}px !important;
+        padding-right: #{$i * 4}px !important;
     }
     .pt-#{$i} {
         padding-top: #{$i * 4}px !important;
     }
     .pb-#{$i} {
         padding-bottom: #{$i * 4}px !important;
+    }
+}
+@for $i from 0 through 10 {
+    .m-#{$i} {
+        margin: #{$i * 4}px !important;
+    }
+    .my-#{$i} {
+        margin-top: #{$i * 4}px !important;
+        margin-bottom: #{$i * 4}px !important;
+    }
+    .mx-#{$i} {
+        margin-left: #{$i * 4}px !important;
+        margin-right: #{$i * 4}px !important;
+    }
+    .mt-#{$i} {
+        margin-top: #{$i * 4}px !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: #{$i * 4}px !important;
     }
 }
 
