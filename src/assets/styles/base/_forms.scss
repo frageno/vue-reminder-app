@@ -72,6 +72,7 @@ select {
   display: flex;
   align-items: center;
   margin-bottom: 1.25rem;
+  position: relative;
 
   &__checkboxes {
     @include flex-container;
@@ -80,10 +81,19 @@ select {
       display: block;
     }
   }
+
+  &__input-container {
+    width: 100%;
+    @include flex-container(flex-start, flex-start, column);
+
+    span {
+      margin-top:0.25rem;
+    }
+  }
 }
 
 /* Error messages */
-.error-message {
+.errorMessage {
   color: red;
   margin-top: 0.5rem;
   font-size: 0.875rem;
